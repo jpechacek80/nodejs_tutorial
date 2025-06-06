@@ -1,0 +1,54 @@
+//install npm
+$npm init 
+// installs package.json
+// desc, entry pt, scripts....
+
+index.js    //entry point.
+console.log(x) //x=window|global|document|process
+
+const greet = () => 'Hello ${name}'
+console.log(greet())
+
+const myObj = {fname: "Joe"};
+console.log(myObj.fname);
+
+//** external FUNCTION
+  "type": "commonjs",
+const express = require('express'); // Importing with CommonJS
+module.exports = function() { };    // Exporting with CommonJS
+
+  "type": "module",
+import express from 'express';    // Importing with ES Modules
+export function myFunction() { }; // Exporting with ES Modules
+
+//** NODEMON SERVER
+>npm install -D nodemon           //install packages, updates package.json
+>npm install                     //install packages from package.json
+
+$npm init 
+// installs package.json
+// desc, entry pt, scripts....
+index.js    //default entry point.
+
+// modify package.json
+"scripts":{"start":nodemon server.js}
+>npm start
+
+//** ENV
+//make a .env file
+PORT=8080
+"scripts":{"start":nodemon --env-file=.env server.js}
+// .gitignore <-- node_modules, .env 
+
+//server.js
+const PORT = process.env.PORT;
+const server = http.createServer((req, res)=>{
+  console.log(req.url);
+  console.log(req.method);
+  });
+
+function greet (arg)  { console.log(`hello,  ${arg}`); };
+const meet=(arg) =>{ console.log(`my name is ${myname}`); }
+
+readstream = fs.createReadStream
+readstream.pipe(writeStream);

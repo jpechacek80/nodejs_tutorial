@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "nodejs tutorial",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpechacek80/nodejs_tutorial.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "jpechadekacek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpechacek80/nodejs_tutorial/issues"
+  },
+  "homepage": "https://github.com/jpechacek80/nodejs_tutorial#readme"
+}
