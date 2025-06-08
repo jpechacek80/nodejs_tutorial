@@ -1,0 +1,14 @@
+/*dragdrop.css*/
+
+.droptarget {
+  width: 100px; 
+  height: 80px;
+  padding: 10px;
+  border: 1px solid black;
+}
+#dragobj {
+  width: 100px; 
+  height: 20px;
+  padding: 5;
+  border: 2px solid black;
+}

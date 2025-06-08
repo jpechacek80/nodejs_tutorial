@@ -52,3 +52,9 @@ const meet=(arg) =>{ console.log(`my name is ${myname}`); }
 
 readstream = fs.createReadStream
 readstream.pipe(writeStream);
+
+100 info
+200 sucess
+300 redirects
+400 client err
+500 server err

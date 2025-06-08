@@ -1,0 +1,27 @@
+<!--about.html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <a href="demo">Demo</a>
+    <a href="about">About</a>
+    <a href="dragdrop">dragdrop</a>
+    <title>myapp</title>
+    <h1>Change Text</h1>
+  </head>
+  <body>
+    <button onclick="myFunc()">Click me</button>
+    <p id="demo">"test"</p>
+    <div>
+    </div>
+  </body>
+</html>
+
+<script>
+function myFunc(){
+const x = document.getElementById("demo");
+  if(x.innerHTML == "test")
+    x.innerHTML = "Hello JavaScript!";
+  else  x.innerHTML = "test";
+}
+</script>

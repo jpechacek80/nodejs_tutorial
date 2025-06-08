@@ -3,34 +3,49 @@
 //
 import * as fs from 'node:fs';
 
-const dirPath= './views/'
-var route;
+const workdir= process.cwd();
+const htmlPath= workdir.concat(`/views`)
+const cssPath= workdir.concat(`/styles`)
+var status_code
 
 function loadpg(resp, url){
-  route=url.substring(1);
-  var filePath= get_html_filename(); 
-  
-  if (!fs.existsSync(filePath))
-  { 
-    console.log(`Err:loadpg file ${filePath}`)
+  var filePath= get_filename(resp,url); 
+  console.log(`filePath= ${filePath}`)
+
+  if (!fs.existsSync(filePath)) { 
+    console.log(`Err:loadpg route= ${url}`)
     resp.statusCode=404;
-    return; };
+    //resp.statusCode=301;
+    //resp.setHeader('Location','/about')
+    resp.end();
+    return; 
+  };
   try{
-    var data = fs.readFileSync(filePath , { encoding: 'utf8', flag: 'r' });
     resp.statusCode=200;
-    resp.setHeader('Content-Type', 'text/html');
+    const data = fs.readFileSync(filePath, 'utf8');
     resp.write(data);
   } 
   catch{
-    resp.statusCode=500;
     console.log(`Err:loadpg file ${filePath}`);
+    resp.statusCode=500;
   }
+    resp.end();
 }
 
-function get_html_filename(){
-  return (dirPath.concat(route).concat('.html')); 
+function get_filename(resp, url){
+  var filepath;                //   /url  ('/' included)
+  console.log(`url= ${url}`)
+  if(url.includes ('.css')){
+    filepath= cssPath.concat(url); 
+    resp.setHeader('Content-Type', 'text/css');
+  }
+  else{
+    filepath= htmlPath.concat(url).concat('.html'); 
+    resp.setHeader('Content-Type', 'text/html');
+  }
+  return filepath;
 }
 
 export  {
-loadpg 
+  loadpg 
 };

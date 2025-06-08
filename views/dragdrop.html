@@ -1,0 +1,35 @@
+<!--dragdrop.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="dragdrop.css">
+
+    <title>myapp</title>
+  </head>
+  
+  <body>
+    <script src="../js/dragdrop.js"></script>
+    <a href="changetext">Changetext</a>
+    <a href="demo">Demo</a>
+    <a href="about">About</a>
+    <h1>DragDrop</h1>
+    <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragobj">Dragme</p>
+
+    <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p>DropHere</p>
+    </div>
+
+    <br> 
+    <p id="demo"></p>
+    <br> 
+
+    <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p>DropHere</p>
+    </div>
+
+  </body>
+</html>
+
+
